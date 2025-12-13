@@ -19,8 +19,7 @@ body {
     color: #eee;
     font-family: var(--f-body);
     overflow-x: hidden;
-    perspective: 1000px;
-    background-image:
+    background-image: 
         radial-gradient(circle at 50% 50%, rgba(11, 20, 40, 1) 0%, rgba(11, 12, 21, 1) 100%);
 }
 
@@ -65,6 +64,10 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10;
+    
+    /* 将透视属性加在这里，只让头部的 3D 场景拥有景深，
+       这样就不会影响全局的 fixed 点击特效了 */
+    perspective: 1000px;
 }
 
 .scene-container {
@@ -170,6 +173,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: auto;
 }
 
 .glass-panel {
@@ -192,29 +196,29 @@ body {
 .tl {
     top: 4px;
     left: 4px;
-    border-r: 0;
-    border-b: 0;
+    border-right: 0;
+    border-bottom: 0;
 }
 
 .tr {
     top: 4px;
     right: 4px;
-    border-l: 0;
-    border-b: 0;
+    border-left: 0;
+    border-bottom: 0;
 }
 
 .bl {
     bottom: 4px;
     left: 4px;
-    border-r: 0;
-    border-t: 0;
+    border-right: 0;
+    border-top: 0;
 }
 
 .br {
     bottom: 4px;
     right: 4px;
-    border-l: 0;
-    border-t: 0;
+    border-left: 0;
+    border-top: 0;
 }
 
 .master-card:hover .deco-corner {
@@ -395,7 +399,7 @@ body {
     width: 100%;
     text-align: center;
     color: #fff;
-    font-size: 0.7rem;
+    font-size: 1rem;
     letter-spacing: 3px;
     opacity: 0.7;
     animation: bounce 2s infinite;
@@ -454,13 +458,17 @@ body {
     height: 40px;
     background: radial-gradient(circle, #fff 20%, transparent 70%);
     border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: burst 0.5s ease-out forwards;
+    transform: scale(0);
+    opacity: 1;
     z-index: 9999;
 }
 
 @keyframes burst {
-    to {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
         transform: translate(-50%, -50%) scale(3);
         opacity: 0;
     }

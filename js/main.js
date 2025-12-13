@@ -112,12 +112,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- FGO 全局点击效果 ---
-    window.addEventListener('click', (e) => {
+    window.addEventListener('click', function( e ) {
         const fx = document.createElement('div');
         fx.className = 'click-fx';
+        
         fx.style.left = e.clientX + 'px';
         fx.style.top = e.clientY + 'px';
+        
         document.body.appendChild(fx);
+        
+        // 使用 Web Animations API 代替 style.animation，
+        // 这样可以避免覆盖 style.transform 导致的闪烁问题
+        fx.animate([
+            { transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
+            { transform: 'translate(-50%, -50%) scale(3)', opacity: 0 }
+        ], { 
+            duration: 500,
+            easing: 'ease-out',
+            fill: 'forwards'
+        });
+        // 动画结束后移除元素
         setTimeout(() => fx.remove(), 600);
     });
 
