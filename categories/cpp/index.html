@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aassade4 - C++分类</title>
+    <link rel="icon" type="image/png" href="../../assets/images/logo.png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="loading-layer">
+        <div class="loading-ring"></div>
+        <div class="loading-text">SYSTEM INITIALIZING...</div>
+    </div>
+
+    <div id="particle-container"></div>
+
+    <header class="hero-section">
+        <div class="scene-container">
+            <div class="chaldeas-system" id="chaldeas-system">
+                <div class="core-sphere">
+                    <div class="core-glow"></div>
+                </div>
+                <!-- Cubes will be injected here by JS -->
+            </div>
+        </div>
+
+        <div class="scroll-ind">
+            <span>向下滚动进入</span>
+        </div>
+    </header>
+
+    <div class="main-wrapper" id="main-interface">
+        <aside class="sidebar">
+            <div class="master-card glass-panel">
+                <div class="deco-corner tl"></div>
+                <div class="deco-corner tr"></div>
+                <div class="deco-corner bl"></div>
+                <div class="deco-corner br"></div>
+
+                <div class="card-avatar"></div>
+                <h2>aassade4</h2>
+                <div class="stats-row">
+                    <div><span>LOGS</span><strong>12</strong></div>
+                    <div><span>TAGS</span><strong>5</strong></div>
+                    <div><span>RANK</span><strong>120</strong></div>
+                </div>
+                <nav class="nav-menu">
+                    <a href="../../index.html" class="nav-link">首页</a>
+                    <a href="../../archives/index.html" class="nav-link">归档</a>
+                    <a href="../../about/index.html" class="nav-link">关于</a>
+                    <a href="../../friend/index.html" class="nav-link">友链</a>
+                </nav>
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <div class="archive-container">
+                <h3 class="section-header">/// C++ 分类归档</h3>
+                <div class="category-posts">
+                    <div class="archive-year">
+                        <h4>2025</h4>
+                        <ul class="archive-list">
+                            <li><a href="../../2025/12/example-post.html">12月 - C++ 性能优化技巧</a></li>
+                            <li><a href="#">11月 - STL 容器深入解析</a></li>
+                            <li><a href="#">10月 - 智能指针的原理与应用</a></li>
+                            <li><a href="#">09月 - 内存管理最佳实践</a></li>
+                            <li><a href="#">08月 - C++17 新特性详解</a></li>
+                        </ul>
+                    </div>
+                    <div class="archive-year">
+                        <h4>2024</h4>
+                        <ul class="archive-list">
+                            <li><a href="#">12月 - C++ 基础语法回顾</a></li>
+                            <li><a href="#">11月 - 面向对象编程实践</a></li>
+                            <li><a href="#">10月 - 模板元编程入门</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-showcase-container">
+                <div class="category-showcase-visual">
+                    <div class="category-showcase-icon">C++</div>
+                </div>
+                <div class="category-showcase-body">
+                    <span class="category-showcase-tag">算法</span>
+                    <h3 class="category-showcase-title">C++</h3>
+                    <div class="category-showcase-meta">2025-12-10 &bull; 3 分钟阅读</div>
+                    <p class="category-showcase-description">探索 C++ 的深度世界，从基础语法到高级特性，涵盖 STL 容器、智能指针、内存管理等核心主题。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../../js/markdown.js"></script>
+    <script src="../../js/blog-engine.js"></script>
+    <script src="../../js/water-surface.js"></script>
+    <script src="../../js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogEngine = new BlogEngine();
+            blogEngine.renderCategoryPage('cpp');
+            
+            const visualContainer = document.querySelector('.category-showcase-visual');
+            if (visualContainer) {
+                new ImaginarySpace(visualContainer, {
+                    width: 960,
+                    height: 120
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

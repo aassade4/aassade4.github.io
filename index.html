@@ -62,49 +62,53 @@
 
         <section class="content-area">
             <div class="article-grid">
-                <article class="fgo-card">
-                    <div class="card-visual" style="--bg-color: #2b3a55;">
-                        <div class="card-class-icon">C++</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">算法</span>
-                        <h3>C++</h3>
-                        <div class="card-meta">2025-12-10 &bull; 3 分钟阅读</div>
-                    </div>
-                </article>
+                <a href="categories/cpp/index.html" class="article-link">
+                    <article class="fgo-card">
+                        <div class="card-visual" style="--bg-color: #2b3a55;">
+                            <div class="card-class-icon">C++</div>
+                        </div>
+                        <div class="card-body">
+                            <span class="tag">算法</span>
+                            <h3>C++</h3>
+                        </div>
+                    </article>
+                </a>
 
-                <article class="fgo-card">
-                    <div class="card-visual" style="--bg-color: #552b2b;">
-                        <div class="card-class-icon">JAVA</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">后端</span>
-                        <h3>JAVA(加瓦)</h3>
-                        <div class="card-meta">2025-11-04 &bull; 5 分钟阅读</div>
-                    </div>
-                </article>
+                <a href="categories/java/index.html" class="article-link">
+                    <article class="fgo-card">
+                        <div class="card-visual" style="--bg-color: #552b2b;">
+                            <div class="card-class-icon">JAVA</div>
+                        </div>
+                        <div class="card-body">
+                            <span class="tag">后端</span>
+                            <h3>JAVA(加瓦)</h3>
+                        </div>
+                    </article>
+                </a>
 
-                <article class="fgo-card">
-                    <div class="card-visual" style="--bg-color: #4a2b55;">
-                        <div class="card-class-icon">MISC</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">生活</span>
-                        <h3>碎碎念</h3>
-                        <div class="card-meta">2025-10-01 &bull; 2 分钟阅读</div>
-                    </div>
-                </article>
+                <a href="categories/misc/index.html" class="article-link">
+                    <article class="fgo-card">
+                        <div class="card-visual" style="--bg-color: #4a2b55;">
+                            <div class="card-class-icon">MISC</div>
+                        </div>
+                        <div class="card-body">
+                            <span class="tag">生活</span>
+                            <h3>碎碎念</h3>
+                        </div>
+                    </article>
+                </a>
 
-                <article class="fgo-card">
-                    <div class="card-visual" style="--bg-color: #2b553c;">
-                        <div class="card-class-icon">WEB</div>
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">前端</span>
-                        <h3>前端</h3>
-                        <div class="card-meta">2025-12-20 &bull; 4 分钟阅读</div>
-                    </div>
-                </article>
+                <a href="categories/web/index.html" class="article-link">
+                    <article class="fgo-card">
+                        <div class="card-visual" style="--bg-color: #2b553c;">
+                            <div class="card-class-icon">WEB</div>
+                        </div>
+                        <div class="card-body">
+                            <span class="tag">前端</span>
+                            <h3>前端</h3>
+                        </div>
+                    </article>
+                </a>
             </div>
 
             <div class="timeline-wrapper">
@@ -116,7 +120,17 @@
         </section>
     </div>
 
+    <script src="js/markdown.js"></script>
+    <script src="js/blog-engine.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // 初始化博客引擎
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogEngine = new BlogEngine();
+            blogEngine.renderHomePage();
+        });
+    </script>
 </body>
 
 </html>

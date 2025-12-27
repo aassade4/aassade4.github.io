@@ -352,6 +352,157 @@ body {
     font-family: var(--f-main);
 }
 
+/* Article Link Styling */
+.article-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Category Card */
+.category-card {
+    background: rgba(16, 20, 30, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bg-color), transparent);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--c-gold);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.category-icon {
+    font-size: 3rem;
+    font-family: var(--f-main);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.category-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.category-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.category-link {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Category Posts */
+
+/* --- 分类展示容器 --- */
+.category-showcase-container {
+    width: 960px;
+    height: 260px;
+    margin-top: 30px;
+    background: rgba(11, 12, 21, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.category-showcase-container:hover {
+    transform: translateY(-8px);
+    border-color: var(--c-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.category-showcase-visual {
+    height: 120px;
+    background: radial-gradient(circle at 50% 50%, rgba(11, 20, 40, 1) 0%, rgba(11, 12, 21, 1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-showcase-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 4rem;
+    font-family: var(--f-main);
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 20;
+}
+
+.category-showcase-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    z-index: 10;
+}
+
+.category-showcase-tag {
+    font-size: 0.8rem;
+    color: var(--c-blue);
+    border: 1px solid var(--c-blue);
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.category-showcase-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: var(--f-main);
+}
+
+.category-showcase-meta {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: var(--f-main);
+}
+
+.category-showcase-description {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #aaa;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
 .timeline-wrapper {
     margin-top: 60px;
     position: relative;
@@ -363,7 +514,6 @@ body {
     letter-spacing: 3px;
     border-bottom: 2px solid var(--c-red);
     display: inline-block;
-    margin-bottom: 30px;
     padding-bottom: 5px;
 }
 
@@ -476,7 +626,12 @@ body {
 
 /* --- 归档页面样式 --- */
 .archive-container {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50px;
+    width: 960px;
 }
 
 .archive-year {
@@ -489,7 +644,7 @@ body {
     color: var(--c-gold);
     font-family: var(--f-main);
     margin-bottom: 15px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .archive-list {
@@ -513,6 +668,7 @@ body {
     color: #aaa;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 1.1rem;
 }
 
 .archive-list a:hover {

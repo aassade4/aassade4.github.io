@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         const logs = [
+            { date: '2025/12/27', title: '美化特效增加', desc: '做了新的美化特效在细分区块内，做了个虚数之海特效' },
             { date: '2025/12/15', title: '系统升级', desc: '优化了渲染引擎。' },
             { date: '2025/11/20', title: '新的奇点', desc: '开始研究WebGL着色器。' },
             { date: '2025/10/05', title: '博客上线', desc: '部署了博客的初始版本。' }
