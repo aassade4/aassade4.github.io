@@ -35,6 +35,7 @@ class ImaginarySpace {
         this.createShaders();
         this.createBuffers();
         this.setupEventListeners();
+        this.setupResizeListener();
         this.animate();
     }
     
@@ -349,6 +350,23 @@ class ImaginarySpace {
             this.mouseVelocity.x = 0;
             this.mouseVelocity.y = 0;
         });
+    }
+    
+    setupResizeListener() {
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                const rect = entry.contentRect;
+                this.width = Math.floor(rect.width);
+                this.height = Math.floor(rect.height);
+                
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
+                
+                this.gl.viewport(0, 0, this.width, this.height);
+            }
+        });
+        
+        resizeObserver.observe(this.container);
     }
     
     animate() {

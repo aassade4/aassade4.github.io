@@ -828,4 +828,99 @@ body {
     .links-grid {
         grid-template-columns: 1fr;
     }
+
+    .category-showcase-container {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+
+    .category-showcase-visual {
+        height: 100px;
+    }
+
+    .category-showcase-icon {
+        font-size: 2.5rem;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .category-showcase-body {
+        padding: 20px;
+    }
+
+    .category-showcase-title {
+        font-size: 1.2rem;
+    }
+
+    .category-showcase-description {
+        font-size: 0.85rem;
+    }
+
+    .archive-container {
+        width: 100%;
+        padding: 15px 0 0 0;
+    }
+
+    .archive-year h4 {
+        font-size: 1.2rem;
+    }
+
+    .archive-list a {
+        font-size: 1rem;
+    }
+
+    .content-area {
+        padding: 0 15px;
+    }
+
+    .sidebar {
+        padding: 0 15px;
+    }
+
+    .master-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-showcase-container {
+        min-height: 180px;
+    }
+
+    .category-showcase-visual {
+        height: 80px;
+    }
+
+    .category-showcase-icon {
+        font-size: 2rem;
+    }
+
+    .category-showcase-body {
+        padding: 15px;
+    }
+
+    .category-showcase-title {
+        font-size: 1rem;
+    }
+
+    .category-showcase-description {
+        font-size: 0.8rem;
+    }
+
+    .category-showcase-meta {
+        font-size: 0.75rem;
+    }
+
+    .archive-year h4 {
+        font-size: 1.1rem;
+    }
+
+    .archive-list a {
+        font-size: 0.9rem;
+    }
+
+    .archive-list li {
+        margin-bottom: 8px;
+    }
 }
